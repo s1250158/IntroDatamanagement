@@ -1,5 +1,5 @@
 import java.util.Random;
-
+import java.io.*;
 
     class Dice{
 
@@ -26,7 +26,26 @@ class DiceGame{
 
     public static void main (String[] args){
 
+	System.out.println("What is your name?\n> ");
 
+
+	InputStreamReader isr = new InputStreamReader(System.in);
+        BufferedReader br = new BufferedReader(isr);
+	
+	
+        String str = null;
+        try {
+            str = br.readLine();
+            br.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+	
+        System.out.println("Hello, " + str + "!");
+ 
+
+	
+	
 	System.out.println("Rolling the dice...");
 
 	Dice d1=new Dice(1);
